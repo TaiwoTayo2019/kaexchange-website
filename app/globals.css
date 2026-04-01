@@ -358,12 +358,13 @@ button { font-family: var(--dm); cursor: pointer; }
 
   .section { padding: 52px 16px; }
   .how-section, .corr-section, .security-section,
-  .data-section, .test-section, .faq-section, .dl-section { padding: 52px 16px; }
+  .data-section, .test-section, .faq-section, .dl-section { 
+    padding: 52px 16px; 
+  }
 
   .diff-grid { gap: 10px; }
   .diff-item { padding: 16px; }
-  .security-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .data-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .security-grid, .data-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .corr-grid { gap: 8px; }
   .corr-item { padding: 14px 16px; gap: 10px; }
   .corr-flags { font-size: 1.2rem; }
@@ -374,26 +375,22 @@ button { font-family: var(--dm); cursor: pointer; }
   .faq-section { padding: 52px 16px; }
   .faq-list { gap: 6px; }
 
-  /* ── NEW TWEAKS YOU REQUESTED ── */
-  
-  /* Force long headings to wrap nicely */
+  /* ── CLEAN WRAPPING + CENTERING (no hyphens) ── */
   .hero h1,
   .section h2,
   .diff-section h2,
   .data-section h2,
   .test-section h2,
   .about-section h2 {
-    font-size: 2rem;
-    line-height: 1.15;
-    word-break: break-word;
-    hyphens: auto;
     text-align: center;
+    line-height: 1.15;
+    word-break: normal;
+    overflow-wrap: break-word;
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Center sub-text and paragraphs */
   .hero-sub,
   .section .sub,
   .diff-body p,
@@ -403,33 +400,18 @@ button { font-family: var(--dm); cursor: pointer; }
   .faq-a,
   .data-item p {
     text-align: center;
-    line-height: 1.7;
   }
 
-  /* Powered By section - center logos properly */
+  /* Powered By section - clean & centered */
   .partners-inner {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 16px;
   }
-  .partners-label {
-    margin-bottom: 12px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-  }
   .partners-logos {
     justify-content: center;
     gap: 28px 40px;
     flex-wrap: wrap;
-    width: 100%;
-  }
-  .p-logo {
-    font-size: 1.05rem;
-  }
-
-  /* Extra safety for very small phones */
-  @media (max-width: 390px) {
-    .hero h1 { font-size: 1.95rem; }
   }
 }
